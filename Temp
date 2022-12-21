@@ -1,0 +1,106 @@
+const ProductsView: React.FC = () => {
+  const productContext = useContext(ProductContext)
+
+  document.title = 'Products | Fixxo.'
+  return (
+    <>
+      <MainMenuSection />
+      <BreadCrumbSection currentPage="Products" />
+      <ProductGridSection title="Products" items={ProductContext.all} />
+      <FooterSection />
+    </>
+  )
+}
+
+
+
+
+
+const ProductsView: React.FC = () => {
+    const {products, getAll} = useProductContext() as ProductContextType
+  
+    useEffect(() => {
+      getAll()
+    }, [])
+  
+    document.title = 'Products | Fixxo.'
+    return (
+      <>
+        <MainMenuSection />
+        <BreadCrumbSection currentPage="Products" />
+        <ProductGridSection title="Products" items={products} />
+        <FooterSection />
+      </>
+    )
+  }
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+  import { createContext } from 'react'
+
+
+export interface ProductContextType {
+
+}
+
+export const ProductContext = createContext<ProductContextType | null>(null)
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+const ProductsView: React.FC = () => {
+  const productContext = useContext(ProductContext)
+
+  document.title = 'Products | Fixxo.'
+  return (
+    <>
+      <MainMenuSection />
+      <BreadCrumbSection currentPage="Products" />
+      <ProductGridSection items={[]} title="Products" {...productContext?.products} />
+      <FooterSection />
+    </>
+  )
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+const ProductDetailsView = () => {
+  const params = useParams()
+
+return (
+  <>
+      <MainMenuSection /> 
+      <div className='container mt-5'>
+          <h1>{params.name}</h1>
+      </div>    
+      <FooterSection />
+  </>
+)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+const HomeView = () => {
+  const productContext = useContext(ProductContext)
+  document.title = 'Fixxo.'
+  return (
+    <>
+      <header>
+        <MainMenuSection />
+        <ShowCaseSection />
+      </header>
+      <ProductGridSection title="Featured Products" items={productContext.featuredProducts} />
+      <BannerSection />
+      <FlashSaleSection_1 items={productContext.flashSaleProducts} />
+      <FlashSaleSection_2 items={productContext.flashSaleProducts} />
+      <Divider />
+      <InfoSection />
+      <FooterSection />
+    </>
+  )
+}

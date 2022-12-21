@@ -1,0 +1,15 @@
+.banners {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+    justify-content: center;
+
+    .leftimg{
+        max-width: 100%;
+    }
+    .rightimg{
+        max-width: 100%;
+    }
+
+}
