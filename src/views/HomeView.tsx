@@ -10,7 +10,6 @@ import { ProductContextType, useProductContext } from '../contexts/ProductContex
 import InfoSection from '../sections/InfoSection'
 import Divider from '../components/Divider'
 
-
 const HomeView: React.FC = () => {
   const {FeaturedProducts, FlashSaleProducts_1, FlashSaleProducts_2, getFeaturedProducts, getFlashSaleProducts_1, getFlashSaleProducts_2} = useProductContext() as ProductContextType
   document.title = 'Fixxo.'

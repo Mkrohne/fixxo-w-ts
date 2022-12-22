@@ -7,7 +7,6 @@ title: string
 text: string
 }
 
-
 const AlertNotifications: React.FC<AlertNotificationsType> = ({alertType = "warning", title, text}) => {
   return (
     <div className={`alert alert-${alertType} text-center mb-5`} role="alert">

@@ -7,10 +7,8 @@ const CategoriestView: React.FC = () => {
   document.title ='Categories | Fixxo.'
   return (
     <>
-    
-    <NotFoundView />
-    
-  </>
+        <NotFoundView />
+    </>
   )
 }
 

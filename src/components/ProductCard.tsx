@@ -4,11 +4,9 @@ import { ShoppingCartContextType, useShoppingCartContext } from '../contexts/Sho
 import { ProductItem } from '../models/ProductModels'
 import { currencyFormatter } from '../utilities/currencyFormatter'
 
-
 interface ProductCardType {
     item: ProductItem
 }
-
 
 const ProductCard: React.FC<ProductCardType> = ({item}) => {
     const { increment } = useShoppingCartContext() as ShoppingCartContextType
@@ -20,7 +18,6 @@ const ProductCard: React.FC<ProductCardType> = ({item}) => {
     const addToCompare = () => {
         console.log("added to compare")
     }
-
 
   return (
     <div className='col'>

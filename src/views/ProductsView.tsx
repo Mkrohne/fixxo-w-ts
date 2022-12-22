@@ -23,5 +23,4 @@ const ProductsView: React.FC = () => {
   )
 }
 
-
 export default ProductsView

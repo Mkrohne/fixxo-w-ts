@@ -6,9 +6,9 @@ const CompareView: React.FC = () => {
   document.title ='Compare | Fixxo.'
   return (
     <>
-    <MainMenuSection />
-    <FooterSection />
-  </>
+        <MainMenuSection />
+        <FooterSection />
+    </>
   )
 }
 

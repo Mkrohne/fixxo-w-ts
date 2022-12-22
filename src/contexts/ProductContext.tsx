@@ -18,7 +18,6 @@ export interface ProductContextType {
     getFlashSaleProducts_1: (take?: number) => void
     getFlashSaleProducts_2: (take?: number) => void
     
-
 }
 
 export const ProductContext = createContext<ProductContextType | null>(null)
@@ -41,13 +40,11 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
         }
     }
 
-
     const getProducts = async () => {
         const res = await fetch(baseUrl)
         setProducts(await res.json())
     }
     
-
     const getFeaturedProducts = async (take: number = 0) => {
         let url = `${baseUrl}/featured`
         
@@ -57,7 +54,6 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
         const res = await fetch(url)
         setFeaturedProducts(await res.json())
     }
-
 
     const getFlashSaleProducts_1 = async (take: number = 0) => {
         let url = `${baseUrl}/flashsale_1`
@@ -78,7 +74,6 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
         const res = await fetch(url)
         setFlashSaleProducts_2(await res.json())
     }
-
 
     return <ProductContext.Provider value={{product, products, FeaturedProducts, FlashSaleProducts_1, FlashSaleProducts_2, getFlashSaleProducts_1, getFlashSaleProducts_2, getProduct, getProducts, getFeaturedProducts}}>
         {children}

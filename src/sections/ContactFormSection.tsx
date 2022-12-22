@@ -18,7 +18,6 @@ const ContactFormSection:React.FC = () => {
   const [submitted, setSubmitted] = useState<Boolean>(false)
   const [failedSubmit, setFailedSubmit] = useState<Boolean>(false)
 
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {id, value} = e.target
     setFormData({...formData, [id]: value})
@@ -38,7 +37,6 @@ const ContactFormSection:React.FC = () => {
     setErrors({...errors, [id]: validateText(id, value, 5)})
   }
 
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitted(false)
@@ -46,8 +44,6 @@ const ContactFormSection:React.FC = () => {
 
     if (formData.name !== '' && formData.email !== '' && formData.comments !== '')
         if (errors.name === '' && errors.email === '' && errors.comments === '') {
-
-
 
             const res = await fetch('https://win22-webapi.azurewebsites.net/api/contactform', {
               method: 'post',
